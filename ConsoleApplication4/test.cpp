@@ -6,20 +6,20 @@
 using namespace std;
 
 int test() {
-    WORKER worker("Иванов И.И.", "Инженер", 2010);
-    // Проверка вывода на экран
-    cout << "Тест 1: Вывод на экран\n";
+    WORKER worker("РРІР°РЅРѕРІ Р.Р.", "РРЅР¶РµРЅРµСЂ", 2010);
+    // РџСЂРѕРІРµСЂРєР° РІС‹РІРѕРґР° РЅР° СЌРєСЂР°РЅ
+    cout << "РўРµСЃС‚ 1: Р’С‹РІРѕРґ РЅР° СЌРєСЂР°РЅ\n";
     cout << worker << endl;
 
-    // Проверка ввода с клавиатуры
+    // РџСЂРѕРІРµСЂРєР° РІРІРѕРґР° СЃ РєР»Р°РІРёР°С‚СѓСЂС‹
     WORKER workerInput;
-    cout << "Тест 2: Ввод с клавиатуры\n";
-    istringstream input("Сидоров С.С.\nМенеджер\n2015\n");
+    cout << "РўРµСЃС‚ 2: Р’РІРѕРґ СЃ РєР»Р°РІРёР°С‚СѓСЂС‹\n";
+    istringstream input("РЎРёРґРѕСЂРѕРІ РЎ.РЎ.\nРњРµРЅРµРґР¶РµСЂ\n2015\n");
     input >> workerInput;
-    cout << "\nСидоров С.С.\nМенеджер\n2015\n";
+    cout << "\nРЎРёРґРѕСЂРѕРІ РЎ.РЎ.\nРњРµРЅРµРґР¶РµСЂ\n2015\n";
     
-    assert(workerInput.getFullName() == "Сидоров С.С.");
-    assert(workerInput.getPosition() == "Менеджер");
+    assert(workerInput.getFullName() == "РЎРёРґРѕСЂРѕРІ РЎ.РЎ.");
+    assert(workerInput.getPosition() == "РњРµРЅРµРґР¶РµСЂ");
     assert(workerInput.getStartYear() == 2015);
 
     return 1;
