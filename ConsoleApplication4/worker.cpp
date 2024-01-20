@@ -26,23 +26,23 @@ int WORKER::getStartYear() const {
 }
 
 ostream& operator<<(ostream& out, const WORKER& worker) {
-    out << "Фамилия и инициалы: " << worker.fullName << endl;
-    out << "Должность: " << worker.position << endl;
-    out << "Год поступления на работу: " << worker.startYear << endl;
+    out << "Р¤Р°РјРёР»РёСЏ Рё РёРЅРёС†РёР°Р»С‹: " << worker.fullName << endl;
+    out << "Р”РѕР»Р¶РЅРѕСЃС‚СЊ: " << worker.position << endl;
+    out << "Р“РѕРґ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РЅР° СЂР°Р±РѕС‚Сѓ: " << worker.startYear << endl;
     return cout;
 }
 
 istream& operator>>(istream& in, WORKER& worker) {
-    cout << "Введите фамилию и инициалы работника: ";
+    cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ Рё РёРЅРёС†РёР°Р»С‹ СЂР°Р±РѕС‚РЅРёРєР°: ";
     getline(in, worker.fullName);
 
-    cout << "Введите название занимаемой должности: ";
+    cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ Р·Р°РЅРёРјР°РµРјРѕР№ РґРѕР»Р¶РЅРѕСЃС‚Рё: ";
     getline(in, worker.position);
 
-    cout << "Введите год поступления на работу: ";
+    cout << "Р’РІРµРґРёС‚Рµ РіРѕРґ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РЅР° СЂР°Р±РѕС‚Сѓ: ";
     in >> worker.startYear;
 
-    // Очистка входного буфера
+    // РћС‡РёСЃС‚РєР° РІС…РѕРґРЅРѕРіРѕ Р±СѓС„РµСЂР°
     in.ignore(numeric_limits<streamsize>::max(), '\n');
 
     return in;
