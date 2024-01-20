@@ -8,28 +8,28 @@
 using namespace std;
 using namespace std::chrono;
 
-// Функция для ввода данных о работниках
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІРІРѕРґР° РґР°РЅРЅС‹С… Рѕ СЂР°Р±РѕС‚РЅРёРєР°С…
 void inputWorkers(WORKER workers[], int arraySize) {
     for (int i = 0; i < arraySize; ++i) {
-        cout << "\nВведите информацию о работнике #" << i + 1 << endl;
+        cout << "\nР’РІРµРґРёС‚Рµ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЂР°Р±РѕС‚РЅРёРєРµ #" << i + 1 << endl;
         cin >> workers[i];
     }
 }
 
-// Функция для вывода фамилий работников с определенным стажем
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹РІРѕРґР° С„Р°РјРёР»РёР№ СЂР°Р±РѕС‚РЅРёРєРѕРІ СЃ РѕРїСЂРµРґРµР»РµРЅРЅС‹Рј СЃС‚Р°Р¶РµРј
 void outputWorkersWithExperience(const WORKER workers[], int arraySize, int thresholdYear) {
     bool found = false;
 
     for (int i = 0; i < arraySize; ++i) {
         if (2023 - workers[i].getStartYear() > thresholdYear) {
-            cout << "Фамилия работника с стажем более " << thresholdYear << " лет: "
+            cout << "Р¤Р°РјРёР»РёСЏ СЂР°Р±РѕС‚РЅРёРєР° СЃ СЃС‚Р°Р¶РµРј Р±РѕР»РµРµ " << thresholdYear << " Р»РµС‚: "
                 << workers[i].getFullName() << endl;
             found = true;
         }
     }
 
     if (!found) {
-        cout << "Нет работников со стажем более " << thresholdYear << " лет." << endl;
+        cout << "РќРµС‚ СЂР°Р±РѕС‚РЅРёРєРѕРІ СЃРѕ СЃС‚Р°Р¶РµРј Р±РѕР»РµРµ " << thresholdYear << " Р»РµС‚." << endl;
     }
 }
 
@@ -56,28 +56,28 @@ int main() {
     
         
         if (test() == 1) {
-            std::cout << "\nЮнит-тесты пройдены успешно!" << std::endl;
+            std::cout << "\nР®РЅРёС‚-С‚РµСЃС‚С‹ РїСЂРѕР№РґРµРЅС‹ СѓСЃРїРµС€РЅРѕ!" << std::endl;
         }
         else {
-            std::cerr << "Юнит-тесты не пройдены!" << std::endl;
+            std::cerr << "Р®РЅРёС‚-С‚РµСЃС‚С‹ РЅРµ РїСЂРѕР№РґРµРЅС‹!" << std::endl;
         }
 
         const int arraySize = 3;
         WORKER workers[arraySize];
 
-        // Ввод данных о работниках
+        // Р’РІРѕРґ РґР°РЅРЅС‹С… Рѕ СЂР°Р±РѕС‚РЅРёРєР°С…
         inputWorkers(workers, arraySize);
         {
             LogDuration input;
-            // Сортировка работников по алфавиту
+            // РЎРѕСЂС‚РёСЂРѕРІРєР° СЂР°Р±РѕС‚РЅРёРєРѕРІ РїРѕ Р°Р»С„Р°РІРёС‚Сѓ
             sort(workers, workers + arraySize, compareWorkers);
         }
         int thresholdYear;
-        cout << "\nВведите стаж, превышение которого нужно найти: ";
+        cout << "\nР’РІРµРґРёС‚Рµ СЃС‚Р°Р¶, РїСЂРµРІС‹С€РµРЅРёРµ РєРѕС‚РѕСЂРѕРіРѕ РЅСѓР¶РЅРѕ РЅР°Р№С‚Рё: ";
         cin >> thresholdYear;
         {
         LogDuration input;
-        // Вывод фамилий работников с определенным стажем
+        // Р’С‹РІРѕРґ С„Р°РјРёР»РёР№ СЂР°Р±РѕС‚РЅРёРєРѕРІ СЃ РѕРїСЂРµРґРµР»РµРЅРЅС‹Рј СЃС‚Р°Р¶РµРј
         outputWorkersWithExperience(workers, arraySize, thresholdYear);
 
         return 0;
